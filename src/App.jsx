@@ -30,12 +30,13 @@ function PostsNew() {
   )
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log(props.postTitle)
   return (
       <div id="posts-index">
         <h1>All posts</h1>
         <div className="posts">
-            <h2>Halo 2: Anniversary</h2>
+            <h2>{props.postTitle}</h2>
             <p>Date: Month Day, Year</p>
             <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/Halo-2-Anniversary-Washed.jpg"/>
             <p>The revamped Anniversary Edition of Halo 2 can be considered a masterpiece that just made the original better</p>
@@ -69,11 +70,12 @@ function Footer() {
 }
 
 function Content() {
-  let myName = "Jordan"
+  let postTitle = "Super Mario World"
+  // console.log(postTitle)
   return (
     <div>
       <PostsNew/>
-      <PostsIndex/>
+      <PostsIndex postTitle={postTitle}/>
     </div>
   )
 }
