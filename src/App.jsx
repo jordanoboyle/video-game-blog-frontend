@@ -68,12 +68,20 @@ function Footer() {
   )
 }
 
+function Content() {
+  let myName = "Jordan"
+  return (
+    <div>
+      <PostsNew/>
+      <PostsIndex/>
+    </div>
+  )
+}
 function App() {
   return (
     <div>
       <Header />
-      <PostsNew />
-      <PostsIndex />
+      <Content/>
       <Footer />
     </div>
   );
