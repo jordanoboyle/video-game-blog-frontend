@@ -35,27 +35,15 @@ function PostsIndex(props) {
   return (
       <div id="posts-index">
         <h1>All posts</h1>
+        {props.posts.map(post => (
         <div className="posts">
-            <h2>Halo 2 Anniversary</h2>
-            <p>Date: Month Day, Year</p>
-            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/Halo-2-Anniversary-Washed.jpg"/>
-            <p>The revamped Anniversary Edition of Halo 2 can be considered a masterpiece that just made the original better</p>
+            <h2>{post.title}</h2>
+            <p>{post.date}</p>
+            <img src={post.image_url}/>
+            <p>{post.body}</p>
             <button>More Information</button>    
         </div>
-        <div className="posts">
-            <h2>Super Mario Sunshine, the unsung hero of 3D Mario</h2>
-            <p>Date: Month Day, Year</p>
-            <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/super-mario-sunshine/6/67/Super-mario-sunshine-1920x1080.jpg?width=1280"/>
-            <p>While this is always the darkhorse, I would argue it was one of the best entries in the series, with slightly silly controls.</p>
-            <button>More Information</button>
-        </div>
-        <div className="posts">
-            <h2>Turrican, An underrated shoot-em up from the SNES Era</h2>
-            <p>Date: Month Day, Year</p>
-            <img src="https://static.tvtropes.org/pmwiki/pub/images/turrican1-1_7070.png"/>
-            <p>A contender for one of the best 80s based videogame soundtracks really set the tone for this shooter. Contra Clone...maybe, but still great.</p>
-            <button>More Information</button>
-        </div>
+        ))}
       </div>
   )
 }
@@ -70,28 +58,26 @@ function Footer() {
 }
 
 function Content() {
-  let postTitle = "Super Mario World"
-  console.log(postTitle)
   let posts = [
     {
       id: 1,
       title: "Halo 2 Anniversary",
       body: "The revamped Anniversary Edition of Halo 2 can be considered a masterpiece that just made the original better",
-      image: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/Halo-2-Anniversary-Washed.jpg",
+      image_url: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/Halo-2-Anniversary-Washed.jpg",
       date: "Date: January Day, Year"
     },
     {
       id: 2,
       title: "Super Mario Sunshine, the unsung hero of 3D Mario",
       body: "While this is always the darkhorse, I would argue it was one of the best entries in the series, with slightly silly controls.",
-      image: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/super-mario-sunshine/6/67/Super-mario-sunshine-1920x1080.jpg?width=1280",
+      image_url: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/super-mario-sunshine/6/67/Super-mario-sunshine-1920x1080.jpg?width=1280",
       date: "Date: May Day, Year"
     },
     {
       id: 3,
       title: "Turrican, An underrated shoot-em up from the SNES Era",
       body: "A contender for one of the best 80s based videogame soundtracks really set the tone for this shooter. Contra Clone...maybe, but still great.",
-      image: "https://static.tvtropes.org/pmwiki/pub/images/turrican1-1_7070.png",
+      image_url: "https://static.tvtropes.org/pmwiki/pub/images/turrican1-1_7070.png",
       date: "Date: February Day, Year"
     },
   ];
