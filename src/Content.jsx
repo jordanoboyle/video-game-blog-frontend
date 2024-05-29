@@ -1,22 +1,29 @@
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
-import axios from "axios"
+import axios from "axios";
+import { useState } from "react";
 
 export function Content() {
-  let posts = [
 
-  ];
-
+  const [posts, setPosts] = useState([])
   const handleIndexPosts = () => {
-    console.log("GETTING THE DATA THINGS")
+
+    axios.get('http://localhost:3000/posts.json').then(response => {
+    // handle success
+    console.log(response.data);
+
+    setPosts(response.data)
+
+    })
   }
+  // useEffect(handleIndexPosts, [])
+
   return (
     <div>
       <PostsNew />
       <br/>
       <br/>
-      <br/>
-      <button title="Press Here" onClick={handleIndexPosts}> Press Here To Add</button>
+      <button title="Press Here" onClick={handleIndexPosts}> BIG RED BUTTON</button>
       <PostsIndex posts={posts} />
     </div>
   );
