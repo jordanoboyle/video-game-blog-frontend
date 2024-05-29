@@ -15,3 +15,21 @@ button {
   border-style: solid;
   border-width: 0.1em;
 }
+
+header {
+  background-color: rgb(84, 80, 80);
+  color: rgb(244, 6, 6);
+  padding: 1em;
+}
+
+header a {
+  margin-right: 1em;
+  /* padding: 0.5em; */
+  color: inherit;
+  text-decoration: none;
+}
+
+header a:hover {
+  background-color: gray;
+  border-radius: 0.2em;
+}
