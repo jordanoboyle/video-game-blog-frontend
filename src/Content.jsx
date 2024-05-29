@@ -25,9 +25,17 @@ export function Content() {
       date: "Date: February Day, Year"
     },
   ];
+
+  const handleIndexPosts = () => {
+    console.log("GETTING THE DATA THINGS")
+  }
   return (
     <div>
       <PostsNew />
+      <br/>
+      <br/>
+      <br/>
+      <button title="Press Here" onClick={handleIndexPosts}> Press Here To Add</button>
       <PostsIndex posts={posts} />
     </div>
   );
