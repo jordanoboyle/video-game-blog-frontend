@@ -4,6 +4,7 @@ html {
 
 #posts-index img {
   width: 280px;
+  height: 250px;
 }
 
 button {
@@ -32,4 +33,10 @@ header a {
 header a:hover {
   background-color: gray;
   border-radius: 0.2em;
+}
+
+.cardPosts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px
 }

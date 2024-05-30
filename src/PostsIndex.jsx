@@ -1,17 +1,22 @@
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button"
 export function PostsIndex(props) {
   console.log(props);
   return (
-    <div id="posts-index">
+    <div id="posts-index" >
       <h1>All posts</h1>
-      {props.posts.map(post => (
-        <div key={post.id} className="posts">
-          <h2>{post.title}</h2>
-          <p>{post.date}</p>
-          <img src={post.image} />
-          <p>{post.body}</p>
-          <button>More Information</button>
-        </div>
-      ))}
+      <Card className="cardPosts" style={{width: "18rem"}} border="danger">
+        {props.posts.map(post => (
+          <Card key={post.id} className="posts">
+            <Card.Title>{post.title}</Card.Title>
+            <Card.Text>{post.date}</Card.Text>
+            <Card.Img variant="top" src={post.image} />
+            <Card.Text>{post.body}</Card.Text>
+            <Button>More Information</Button>
+          </Card>
+        ))}
+      </Card>
+
     </div>
   );
 }
