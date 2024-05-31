@@ -33,10 +33,17 @@ export function Content() {
       setIsPostsShowVisible(false);
   }
     
+  const handleCreatePost = (theParams) => {
+    console.log("handling the create post")
+    axios.post("http://localhost:3000/posts.json", theParams).then(response => {
+      console.log(response.data);
+      setPosts([...posts, response.data])
+  })
+}
     
   return (
     <main>
-      <PostsNew />
+      <PostsNew onCreatePost={handleCreatePost} />
       <br/>
       <br/>
       <button title="Press Here" onClick={handleIndexPosts}> BIG RED BUTTON</button>

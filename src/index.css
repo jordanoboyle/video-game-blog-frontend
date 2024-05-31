@@ -21,6 +21,7 @@ header {
   background-color: rgb(84, 80, 80);
   color: rgb(244, 6, 6);
   padding: 1em;
+  font-family: fantasy;
 }
 
 header a {
