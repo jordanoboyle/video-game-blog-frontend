@@ -10,17 +10,21 @@ export function Content() {
 
   const handleIndexPosts = () => {
     axios.get('http://localhost:3000/posts.json').then(response => {
-      // handle success
         console.log(response.data);
   
-        setPosts(response.data)
+        setPosts(response.data);
   
       })
     }
     useEffect(handleIndexPosts, [])
     
     const handleShowPost = () => {
-      console.log("show me the post please")
+      console.log("show me the post please");
+      setIsPostsShowVisible(true);
+    }
+    const handleClose = () => {
+      console.log("closing the button")
+      setIsPostsShowVisible(false);
     }
     
     
@@ -30,9 +34,10 @@ export function Content() {
       <br/>
       <br/>
       <button title="Press Here" onClick={handleIndexPosts}> BIG RED BUTTON</button>
-      <button onClick={handleShowPost}>SHOW DIS MODAL</button>
-      <PostsIndex posts={posts} />
-      <Modal show={isPostsShowVisible}>  {/*Most of the time a modal will be self closing. */}
+      <PostsIndex posts={posts} onShowPost={handleShowPost}/>
+      {/*This is DATADOWN            THIS IS EVENT UP from PostsIndex */}
+      {/*DATA passed to PostsIndex      onClick=onShowPost being passed up*/}
+      <Modal show={isPostsShowVisible} onClose={handleClose}>  {/*Most of the time a modal will be self closing.*/}
         THHESE BE CHILLENS 
       </Modal>
 

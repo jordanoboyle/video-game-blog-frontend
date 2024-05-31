@@ -15,6 +15,7 @@ export function PostsIndex(props) {
               {post.body}
             </p>
             <Button>More Information</Button>
+            <button onClick={props.onShowPost}>SHOW DIS MODAL</button>
           </div>
         ))}
       </div>
