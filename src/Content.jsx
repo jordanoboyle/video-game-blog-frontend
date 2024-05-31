@@ -39,11 +39,14 @@ export function Content() {
       console.log(response.data);
       setPosts([...posts, response.data])
   })
-
-  const handleUpdatePost = (theParams) => {
-
-  }
 }
+
+  // const handleUpdatePost = (theParams) => {
+  //   axios.patch(`http://localhost:3000/posts/${post.id}.json`, theParams).then (response =>{
+  //   console.log(response.data);
+  //   setPosts([...posts, response.data])
+  // })
+  // }
     
   return (
     <main>

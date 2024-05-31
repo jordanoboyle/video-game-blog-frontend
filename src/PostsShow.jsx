@@ -7,10 +7,10 @@ export function PostsShow(props) {
     const params = new FormData(event.target);
     //here we need to make the web request PATCH to update just like PostsNew
     axios.patch(`http://localhost:3000/posts/${props.post.id}.json`, params).then (response =>{
-      console.log(response.data);
+    // props.onPostUpdate(params);
+    console.log(response.data)
+    console.log("handling an update submission");
   })
-  console.log("handling an update submission");
-  
   }
   
   
