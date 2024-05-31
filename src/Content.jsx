@@ -1,6 +1,7 @@
 import { Modal } from "./Modal";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
+import { PostsShow } from "./PostsShow"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -44,11 +45,7 @@ export function Content() {
       {/*DATA passed to PostsIndex      onClick=onShowPost being passed up*/}
       <Modal show={isPostsShowVisible} onClose={handleClose}>  {/*Most of the time a modal will be self closing.*/}
         Children
-        <div>
-          <p>{currentPost.title}</p>
-          <p>{currentPost.image}</p>
-          <p>{currentPost.body}</p>
-        </div>
+       <PostsShow post={currentPost}/>
       </Modal>
 
     </main>

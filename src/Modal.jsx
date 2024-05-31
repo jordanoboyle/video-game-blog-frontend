@@ -6,7 +6,7 @@ export function Modal(props) {
       <div className="modal-background">
         <section className="modal-main">
           {props.children}
-          {/*We can put more children here to pass through the modal (used if unchanging MODAL)*/}
+          {/*We can put more children here to pass through the modal (used if unchanged*/}
           <button className="close" type="button" onClick={props.onClose}>
             &#x2715;
           </button>
