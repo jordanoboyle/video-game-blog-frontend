@@ -39,6 +39,10 @@ export function Content() {
       console.log(response.data);
       setPosts([...posts, response.data])
   })
+
+  const handleUpdatePost = (theParams) => {
+
+  }
 }
     
   return (
@@ -52,7 +56,7 @@ export function Content() {
       {/*DATA passed to PostsIndex      onClick=onShowPost being passed up*/}
       <Modal show={isPostsShowVisible} onClose={handleClose}>  {/*Most of the time a modal will be self closing.*/}
         Children
-       <PostsShow post={currentPost}/>
+       <PostsShow post={currentPost}/> 
       </Modal>
 
     </main>
