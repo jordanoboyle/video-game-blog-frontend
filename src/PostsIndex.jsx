@@ -5,17 +5,19 @@ export function PostsIndex(props) {
   return (
     <div id="posts-index" >
       <h1>All posts</h1>
-      <Card className="cardPosts" style={{width: "18rem"}} border="danger">
+      <div className="cardPosts">
         {props.posts.map(post => (
-          <Card key={post.id} className="posts">
-            <Card.Title>{post.title}</Card.Title>
-            <Card.Text>{post.date}</Card.Text>
-            <Card.Img variant="top" src={post.image} />
-            <Card.Text>{post.body}</Card.Text>
+          <div key={post.id} className="posts">
+            <h2>{post.title}</h2>
+            <p>{post.date}</p>
+            <img variant="top" src={post.image} />
+            <p>
+              {post.body}
+            </p>
             <Button>More Information</Button>
-          </Card>
+          </div>
         ))}
-      </Card>
+      </div>
 
     </div>
   );

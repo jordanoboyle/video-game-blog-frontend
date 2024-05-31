@@ -16,7 +16,7 @@ export function Content() {
       })
     }
 
-  // useEffect(handleIndexPosts, [])
+  useEffect(handleIndexPosts, [])
 
   return (
     <div>
