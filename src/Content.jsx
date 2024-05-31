@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 
 export function Content() {
   const [posts, setPosts] = useState([])
-  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false) /*We want to be able to change this dynamically */
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false) 
+  const [currentPost, setCurrentPost] = useState({})
 
   const handleIndexPosts = () => {
     axios.get('http://localhost:3000/posts.json').then(response => {
@@ -15,17 +16,21 @@ export function Content() {
         setPosts(response.data);
   
       })
-    }
+  }
     useEffect(handleIndexPosts, [])
     
-    const handleShowPost = () => {
+  const handleShowPost = (myPost) => {
       console.log("show me the post please");
+      console.log(myPost)
+
+      setCurrentPost(myPost)
       setIsPostsShowVisible(true);
-    }
-    const handleClose = () => {
+  }
+
+  const handleClose = () => {
       console.log("closing the button")
       setIsPostsShowVisible(false);
-    }
+  }
     
     
   return (
@@ -38,7 +43,12 @@ export function Content() {
       {/*This is DATADOWN            THIS IS EVENT UP from PostsIndex */}
       {/*DATA passed to PostsIndex      onClick=onShowPost being passed up*/}
       <Modal show={isPostsShowVisible} onClose={handleClose}>  {/*Most of the time a modal will be self closing.*/}
-        THHESE BE CHILLENS 
+        Children
+        <div>
+          <p>{currentPost.title}</p>
+          <p>{currentPost.image}</p>
+          <p>{currentPost.body}</p>
+        </div>
       </Modal>
 
     </main>
