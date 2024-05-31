@@ -1,6 +1,7 @@
 import axios from "axios"
 
 export function PostsShow(props) {
+  
   const handleSubmit = (event) => {
     console.log(event)
     event.preventDefault();
@@ -11,6 +12,12 @@ export function PostsShow(props) {
     console.log(response.data)
     console.log("handling an update submission");
   })
+  }
+  const deletePost = () => {
+    console.log("deleting the post desired!");
+    axios.delete(`http://localhost:3000/posts/${props.post.id}.json`).then(response => {
+      console.log(response.data);
+    })
   }
   
   
@@ -38,6 +45,10 @@ export function PostsShow(props) {
         </div>
         <button type="submit">Resave Game Data</button>
       </form>
+        <br/>
+        <br/>
+        <br/>
+        <button onClick={deletePost}>Delete Save Data</button>
     </div>
   )
 }
