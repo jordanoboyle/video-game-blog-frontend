@@ -5,6 +5,7 @@ import { PostsShow } from "./PostsShow"
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
+import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -47,13 +48,15 @@ export function Content() {
   const handleUpdatePost = (theParams, id) => {
     axios.patch(`http://localhost:3000/posts/${id}.json`, theParams).then (response =>{
     console.log(response.data);
-    setPosts([...posts, response.data])
+    window.location.href = "/"
   })
   }
     
   return (
     <main>
-      <Signup />
+      <Routes>
+        <Route path="/signup" element={ <Signup /> } />
+      </Routes>
       <br/>
       <Login />
       <br/>
