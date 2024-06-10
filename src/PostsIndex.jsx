@@ -14,7 +14,7 @@ export function PostsIndex(props) {
             <img variant="top" src={post.image} />
             <p>{post.body}</p>
             <Button>More Information</Button>
-            <button onClick={() => props.onShowPost(post)}>SHOW DIS MODAL</button>
+            <button onClick={() => props.onShowPost(post)}>Update Saved Game Data</button>
           </div>
         ))}
       </div>

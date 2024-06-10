@@ -17,9 +17,7 @@ export function Content() {
   const handleIndexPosts = () => {
     axios.get('http://localhost:3000/posts.json').then(response => {
         console.log(response.data);
-  
         setPosts(response.data);
-  
       })
   }
     useEffect(handleIndexPosts, [])

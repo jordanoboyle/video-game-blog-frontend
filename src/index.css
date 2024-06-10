@@ -2,21 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#posts-index img {
-  width: 280px;
-  height: 250px;
-}
-
-button {
-  border: outset;
-}
-
-#posts-new form input {
-  border: black;
-  border-style: solid;
-  border-width: 0.1em;
-}
-
+/* Header Design */
 header {
   background-color: rgb(84, 80, 80);
   color: rgb(244, 6, 6);
@@ -36,13 +22,25 @@ header a:hover {
   border-radius: 0.2em;
 }
 
+
+/* Blog Posts Design */
+#posts-index img {
+  width: 280px;
+  height: 250px;
+}
+
+button {
+  border: outset;
+}
+
+#posts-new form input {
+  border: black;
+  border-style: solid;
+  border-width: 0.1em;
+}
+
 .cardPosts {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px
-}
-
-#logOutLink {
-  position: absolute;
-  right: 300px;
 }
