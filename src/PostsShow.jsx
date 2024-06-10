@@ -24,7 +24,7 @@ export function PostsShow(props) {
   
   return (
     <div>
-      <p>STILL THE CHILLENS HERE</p>
+      <p>Modal OPEN</p>
       <p>{props.post.title}</p>
       <p>{props.post.image}</p>
       <p>{props.post.body}</p>

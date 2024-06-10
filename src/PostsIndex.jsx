@@ -1,4 +1,4 @@
-import Card from "react-bootstrap/Card";
+
 import Button from "react-bootstrap/Button"
 export function PostsIndex(props) {
   console.log(props);
@@ -15,7 +15,6 @@ export function PostsIndex(props) {
             <p>{post.body}</p>
             <Button>More Information</Button>
             <button onClick={() => props.onShowPost(post)}>SHOW DIS MODAL</button>
-            {/*Welcome to JS ^ we had to wrap this in another function to call this dynamically */}
           </div>
         ))}
       </div>

@@ -55,9 +55,7 @@ export function Content() {
       <br/>
       <button title="Press Here" onClick={handleIndexPosts}> BIG RED BUTTON</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost}/>
-      {/*This is DATADOWN            THIS IS EVENT UP from PostsIndex */}
-      {/*DATA passed to PostsIndex      onClick=onShowPost being passed up*/}
-      <Modal show={isPostsShowVisible} onClose={handleClose}>  {/*Most of the time a modal will be self closing.*/}
+      <Modal show={isPostsShowVisible} onClose={handleClose}>  
         Children
        <PostsShow post={currentPost}/> 
       </Modal>
