@@ -3,6 +3,7 @@ import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { PostsShow } from "./PostsShow"
 import { Signup } from "./Signup";
+import { Login } from "./Login";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -52,6 +53,8 @@ export function Content() {
   return (
     <main>
       <Signup />
+      <br/>
+      <Login />
       <br/>
       <PostsNew onCreatePost={handleCreatePost} />
       <br/>
