@@ -12,7 +12,6 @@ export function PostsNew(props) {
   
   return (
     <div id="posts-new">
-      <p>Hello, I am new to this page!</p>
       <h1>New post</h1>
       <form onSubmit={handleSubmit}>
         <div>

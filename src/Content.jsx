@@ -4,6 +4,7 @@ import { PostsNew } from "./PostsNew";
 import { PostsShow } from "./PostsShow"
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -55,6 +56,8 @@ export function Content() {
       <Signup />
       <br/>
       <Login />
+      <br/>
+      <LogoutLink />
       <br/>
       <PostsNew onCreatePost={handleCreatePost} />
       <br/>
