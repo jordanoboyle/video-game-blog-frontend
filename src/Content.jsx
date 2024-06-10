@@ -27,7 +27,6 @@ export function Content() {
   const handleShowPost = (myPost) => {
       console.log("show me the post please");
       console.log(myPost)
-
       setCurrentPost(myPost)
       setIsPostsShowVisible(true);
   }
