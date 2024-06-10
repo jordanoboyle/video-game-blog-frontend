@@ -2,6 +2,7 @@ import { Modal } from "./Modal";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { PostsShow } from "./PostsShow"
+import { Signup } from "./Signup";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -41,23 +42,24 @@ export function Content() {
   })
 }
 
-  // const handleUpdatePost = (theParams) => {
-  //   axios.patch(`http://localhost:3000/posts/${post.id}.json`, theParams).then (response =>{
-  //   console.log(response.data);
-  //   setPosts([...posts, response.data])
-  // })
-  // }
+  const handleUpdatePost = (theParams, id) => {
+    axios.patch(`http://localhost:3000/posts/${id}.json`, theParams).then (response =>{
+    console.log(response.data);
+    setPosts([...posts, response.data])
+  })
+  }
     
   return (
     <main>
-      <PostsNew onCreatePost={handleCreatePost} />
+      <Signup />
       <br/>
+      <PostsNew onCreatePost={handleCreatePost} />
       <br/>
       <button title="Press Here" onClick={handleIndexPosts}> BIG RED BUTTON</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost}/>
       <Modal show={isPostsShowVisible} onClose={handleClose}>  
         Children
-       <PostsShow post={currentPost}/> 
+       <PostsShow post={currentPost} onPostUpdate={handleUpdatePost} /> 
       </Modal>
 
     </main>

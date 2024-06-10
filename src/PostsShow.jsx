@@ -6,20 +6,17 @@ export function PostsShow(props) {
     console.log(event)
     event.preventDefault();
     const params = new FormData(event.target);
-    //here we need to make the web request PATCH to update just like PostsNew
-    axios.patch(`http://localhost:3000/posts/${props.post.id}.json`, params).then (response =>{
-    // props.onPostUpdate(params);
-    console.log(response.data)
+    props.onPostUpdate(params, props.post.id);
     console.log("handling an update submission");
-  })
   }
+
   const deletePost = () => {
     console.log("deleting the post desired!");
     axios.delete(`http://localhost:3000/posts/${props.post.id}.json`).then(response => {
       console.log(response.data);
     })
   }
-  
+ 
   
   
   return (
