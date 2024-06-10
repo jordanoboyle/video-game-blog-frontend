@@ -1,5 +1,7 @@
-
 import Button from "react-bootstrap/Button"
+import { AboutMe } from "./AboutMe";
+import { PostsFavorites } from "./PostsFavorites";
+
 export function PostsIndex(props) {
   console.log(props);
   return (
@@ -18,7 +20,10 @@ export function PostsIndex(props) {
           </div>
         ))}
       </div>
-
+      <div>
+        <AboutMe />
+        <PostsFavorites />
+      </div>  
     </div>
   );
 }
