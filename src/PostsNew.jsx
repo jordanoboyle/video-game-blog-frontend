@@ -1,4 +1,3 @@
-import axios from "axios"
 
 export function PostsNew(props) {
   const handleSubmit = (event) => {
