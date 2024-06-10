@@ -37,20 +37,6 @@ export function Content() {
       setIsPostsShowVisible(false);
   }
     
-  const handleCreatePost = (theParams) => {
-    console.log("handling the create post")
-    axios.post("http://localhost:3000/posts.json", theParams).then(response => {
-      console.log(response.data);
-      setPosts([...posts, response.data])
-  })
-}
-
-  const handleUpdatePost = (theParams, id) => {
-    axios.patch(`http://localhost:3000/posts/${id}.json`, theParams).then (response =>{
-    console.log(response.data);
-    window.location.href = "/"
-  })
-  }
     
   return (
     <main>
@@ -58,14 +44,14 @@ export function Content() {
         <Route path="/signup" element={ <Signup /> } />
         <Route path="/login" element={ < Login/> } />
         <Route path="/logout" element={<LogoutLink/>} />
-        <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} /> 
+        <Route path="/posts/new" element={<PostsNew />} /> 
         <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost}/>} />
       </Routes>
       <br/>
       <button> BIG RED BUTTON</button>
       <Modal show={isPostsShowVisible} onClose={handleClose}>  
         Children
-       <PostsShow post={currentPost} onPostUpdate={handleUpdatePost} /> 
+       <PostsShow post={currentPost} /> 
       </Modal>
 
     </main>

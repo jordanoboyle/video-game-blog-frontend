@@ -6,9 +6,12 @@ export function PostsShow(props) {
     console.log(event)
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onPostUpdate(params, props.post.id);
-    console.log("handling an update submission");
-  }
+    axios.patch("http://localhost:3000/posts.json", params).then(response => {
+      console.log(response.data);
+      console.log("handling an update from separate page");
+      window.location.href = "/posts";
+    })
+}
 
   const deletePost = () => {
     console.log("deleting the post desired!");
