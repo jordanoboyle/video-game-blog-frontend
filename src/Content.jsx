@@ -56,6 +56,7 @@ export function Content() {
     <main>
       <Routes>
         <Route path="/signup" element={ <Signup /> } />
+        <Route path="/login" element={ < Login/> } />
       </Routes>
       <br/>
       <Login />
